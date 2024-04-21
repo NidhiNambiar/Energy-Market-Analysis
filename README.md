@@ -8,6 +8,7 @@ The implementation of this project has been structured into four distinct stages
 ![#FFD700](https://via.placeholder.com/15/FFD700/000000?text=+)
 `INGEST` 
 
+In this ingest stage, a Python function has been implemented within Google Cloud Functions. This function is designed to retrieve daily crude oil price data from the APIs of the four companies. The data is stored in separate Google Cloud Storage buckets, one for each company.
 
 
 
