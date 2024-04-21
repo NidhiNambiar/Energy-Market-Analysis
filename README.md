@@ -1,1 +1,1 @@
-# inst767
+INST 767 - Final Project
