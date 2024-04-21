@@ -58,6 +58,7 @@ We have used the main following Packages:
 
 **flask**: A lightweight WSGI (Web Server Gateway Interface) web application framework. It's used to handle HTTP requests when the function is deployed as a Google Cloud Function.
 
+Here is a detailed breakdown of the processes involved:
 
 
 
@@ -84,7 +85,9 @@ Here is a detailed breakdown of the processes involved:
 ![#FFD700](https://via.placeholder.com/15/FFD700/000000?text=+)
 `STORAGE `
 
+In this stage, we have established a database on Google Cloud. The type of database chosen is [not determined] to align logically with our data model. This particular dataset model was selected to ensure that our data can be easily and logically queried.
 
+Here is a detailed breakdown of the processes involved:
 
 
 
@@ -93,6 +96,10 @@ Here is a detailed breakdown of the processes involved:
 `ANALYSIS`
 
 
+
+
+
+Here is a detailed breakdown of the processes involved:
 
 
  
