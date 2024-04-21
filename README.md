@@ -8,7 +8,10 @@ The implementation of this project has been structured into four distinct stages
 
 
 **Objective**
-To utilize current data on gas prices, crude oil prices, and oil & gas company stock values to develop predictive models and analytical resources. These tools will be designed to predict market trends and offer strategic advice to tackle challenges in various fields such as oil & gas, transportation, manufacturing, and finance. The focus will be on discovering connections between these data points and vital economic indicators to aid in decision-making for cost control, investment planning, and operational enhancements.
+
+To utilize current data on gas prices, crude oil prices, and oil & gas company stock values to develop predictive models and analytical resources. 
+
+We will build business questions to predict market trends and offer strategic advice to tackle challenges in various fields such as oil & gas, transportation, manufacturing, and finance. The focus will be on discovering connections between these data points and vital economic indicators to aid in decision-making for cost control, investment planning, and operational enhancements.
 
 This objective capitalizes on the data’s capability to deliver practical insights that can substantially shape business strategies and financial management across various sectors.
 
