@@ -74,7 +74,9 @@ We have used the main following Packages:
 ![#FFD700](https://via.placeholder.com/15/FFD700/000000?text=+)
 `TRANSFORM`
 
+In this stage, we have transformed the data into a unified data model, integrating data from four different sources into a single model. The current status of this model is [not determined]. The transformation of raw data into the data model was carried out using [DataProc and PySpark]. The objective of this stage is to process the data from ingestion, transform it, and transfer it to the storage tool for the subsequent step, ensuring that no data is retained during the transformation phase.
 
+Here is a detailed breakdown of the processes involved:
 
 
 
