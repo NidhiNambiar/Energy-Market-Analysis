@@ -7,6 +7,13 @@ The implementation of this project has been structured into four distinct stages
 
 
 
+
+
+
+
+
+
+
 **Objective**
 
 To utilize current data on gas prices, crude oil prices, and oil & gas company stock values to develop predictive models and analytical resources. 
@@ -14,6 +21,11 @@ To utilize current data on gas prices, crude oil prices, and oil & gas company s
 We will build business questions to predict market trends and offer strategic advice to tackle challenges in various fields such as oil & gas, transportation, manufacturing, and finance. The focus will be on discovering connections between these data points and vital economic indicators to aid in decision-making for cost control, investment planning, and operational enhancements.
 
 This objective capitalizes on the data’s capability to deliver practical insights that can substantially shape business strategies and financial management across various sectors.
+
+
+
+
+
 
 
 
@@ -38,6 +50,12 @@ We have used the main following Packages:
 **os**: A standard library in Python that provides functions for interacting with the operating system. This includes reading or writing environment variables.
 **datetime**: A standard library module in Python used for manipulating dates and times.
 **flask**: A lightweight WSGI (Web Server Gateway Interface) web application framework. It's used to handle HTTP requests when the function is deployed as a Google Cloud Function.
+
+
+
+
+
+
 
 
 
