@@ -5,6 +5,16 @@ In this project, we have an all-inclusive data system which results from the int
 The implementation of this project has been structured into four distinct stages: data ingestion, transformation, storage, and analysis.
 
 
+
+**Goal of this Project**
+
+
+
+
+
+
+
+
 ![#FFD700](https://via.placeholder.com/15/FFD700/000000?text=+)
 `INGEST` 
 
