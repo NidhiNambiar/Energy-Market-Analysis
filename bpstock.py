@@ -18,7 +18,7 @@ def fetch_and_store_stock_data(request):
     bucket = storage_client.bucket('bp_stock_mohamed')
 
     # Function to fetch XOM stock market data
-    api_url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=bp&interval=5min&apikey=7Z7C98IW98LRK952"
+    api_url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=BP&interval=5min&apikey=YOUR_API_KEY"
     response = requests.get(api_url)
     data = response.text
 
