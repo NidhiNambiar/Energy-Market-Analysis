@@ -1,0 +1,48 @@
+#CRUDE
+
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import col, explode, lit
+from pyspark.sql.types import StructType, StructField, StringType, ArrayType, DoubleType
+
+# Initialize SparkSession with BigQuery support.
+spark = SparkSession.builder \
+    .appName('CrudeBigQuery') \
+    .config('spark.jars.packages', 'com.google.cloud.spark:spark-bigquery-with-dependencies_2.12:0.22.0') \
+    .getOrCreate()
+
+# Define the path to the JSON files.
+json_path = "gs://crude767_wti/test.json"
+
+# Read the JSON file into a DataFrame
+df = spark.read.option("multiline", "true").json(json_path)
+
+# Assuming the JSON structure has an array under the root or a key
+if 'data' in df.columns:
+    data_df = df.select(explode("data").alias("data"))
+else:
+    data_df = df.select(explode(col("data")).alias("data"))  # Adjust the column name as necessary
+
+# Define the schema for the nested structure
+schema = StructType([
+    StructField("date", StringType(), True),
+    StructField("value", DoubleType(), True)
+])
+
+# Select specific fields and convert the value field
+data_df = data_df.select(
+    col("data.date").alias("date"),
+    col("data.value").cast(DoubleType()).alias("value")
+)
+
+# Sort the DataFrame
+data_df.show()
+
+data_df.write.format('bigquery') \
+    .option('writeMethod', 'direct') \
+    .option('table', 'learned-vault-378620.crudedataset.crudeprice') \
+    .option('temporaryGcsBucket', 'stock-temp-storage') \
+    .mode('overwrite') \
+    .save()
+
+# Stop the SparkSession
+spark.stop()
