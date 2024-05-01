@@ -1,26 +1,57 @@
-#Exxon
+#EXXON
 
-from google.cloud import storage
-import requests
-import os
-from datetime import datetime
-from flask import escape
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import col, explode, lit
+from pyspark.sql.types import StructType, StructField, StringType, ArrayType
 
-def fetch_and_store_stock_data(request):
-    request_json = request.get_json(silent=True)
-    request_args = request.args
+# Initialize SparkSession with the BigQuery support.
+spark = SparkSession.builder \
+    .appName('CrudeBigQuery') \
+    .config('spark.jars.packages', 'com.google.cloud.spark:spark-bigquery-with-dependencies_2.12:0.22.0') \
+    .getOrCreate()
 
-    # Initialize Cloud Storage client
-    storage_client = storage.Client()
-    bucket = storage_client.bucket('stock767_xom')
+# Define the path to the JSON files.
+json_path = 'gs://stock767_xom/stock_data_20240501183529.json'
 
-    # Function to fetch stock market data
-    api_url = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=XOM&apikey=311DM75JHN4UE6UD"
-    response = requests.get(api_url)
-    data = response.text
+# Read the JSON files into a DataFrame using the defined schema.
 
-    filename = f"stock_data_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
+df = spark.read.option("multiline", "true").json(json_path)
+time_series_column = df.select("Time Series (Daily)").columns[0]
 
-    blob = bucket.blob(filename)
-    blob.upload_from_string(data, content_type='application/json')
-    return f"File {filename} uploaded to {bucket.name}."
+# Retrieve the names of the timestamps
+timestamps = df.select(col(time_series_column)).schema[0].dataType.names
+
+# Initialize an empty DataFrame to union all the structured rows
+final_df = None
+
+# Iterate through timestamps to create a structured row for each
+for timestamp in timestamps:
+    # Select and alias each nested field
+    row_df = df.select(
+        lit(timestamp).alias("Date"),
+        col(f"`Time Series (Daily)`.`{timestamp}`.`1. open`").alias("Open"),
+        col(f"`Time Series (Daily)`.`{timestamp}`.`2. high`").alias("High"),
+        col(f"`Time Series (Daily)`.`{timestamp}`.`3. low`").alias("Low"),
+        col(f"`Time Series (Daily)`.`{timestamp}`.`4. close`").alias("Close"),
+        col(f"`Time Series (Daily)`.`{timestamp}`.`5. volume`").alias("Volume")
+    )
+
+    # Union the structured row with the final DataFrame
+    if final_df is None:
+        final_df = row_df
+    else:
+        final_df = final_df.union(row_df)
+
+# Show the final DataFrame structure
+final_df.show()
+
+# # Write the DataFrame to BigQuery.
+final_df.write.format('bigquery') \
+    .option('writeMethod', 'direct') \
+    .option('table', 'learned-vault-378620.stocks_767.exxonstock') \
+    .option('temporaryGcsBucket', 'stock-temp-storage') \
+    .mode('overwrite') \
+    .save()
+
+# Stop the SparkSession
+spark.stop()
