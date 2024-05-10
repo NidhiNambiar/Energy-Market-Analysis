@@ -4,7 +4,7 @@ This project is designed to draw insights by harnessing data on gas prices, crud
 
 **Data Sources**
 
-The data for this project is retrieved from three main sources using the [Alphavantage API] (https://www.alphavantage.co/):
+The data for this project is retrieved from three main sources using the [Alphavantage API](https://www.alphavantage.co/):
 1.	Gas Prices: Daily gas price data.
 2.	Crude Oil Prices: Daily crude oil price data.
 3.	Stock Values: Daily stock prices of CVX, SHEL, XOM, and BP.
