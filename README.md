@@ -29,7 +29,7 @@ The data ingestion process is handled via [Python scripts](https://github.com/an
 
 ### Transformation
 
-Data transformation is conducted using [PySpark](https://github.com/animeshnandan/inst767/tree/main/dataprocjobs) on Google Cloud's DataProc service, where we have employed cloud scheduler and dataproc workflows which trigger the creation of a compute engine which runs the jobs for all 4 stocks along with crude oil and natural gas. This stage aligns the data from their sources into a unified data model that supports our analytical objectives. Transformations are scheduled to run in accordance with the data ingest timings.
+Data transformation is conducted using [PySpark code](https://github.com/animeshnandan/inst767/tree/main/dataprocjobs) on Google Cloud's DataProc service, where we have employed cloud scheduler and dataproc workflows which trigger the creation of a compute engine which runs the jobs for all 4 stocks along with crude oil and natural gas. This stage aligns the data from their sources into a unified data model that supports our analytical objectives. Transformations are scheduled to run in accordance with the data ingest timings.
 
 ![cloud storage bucket storing pyspark files](https://github.com/animeshnandan/inst767/assets/83339335/f2013552-97d4-4056-9753-7b655ed4f6ea)
 
