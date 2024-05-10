@@ -1,10 +1,10 @@
 **Project Overview**
 
-This project is designed to develop predictive models and analytical resources by harnessing data on gas prices, crude oil prices, and the stock values of major oil and gas companies. The companies in focus include Chevron Corporation (CVX), Royal Dutch Shell (SHEL), ExxonMobil Corporation (XOM), and BP plc (BP). The project is structured into four distinct stages: data ingestion, transformation, storage, and analysis. Each stage plays a crucial role in turning raw data into insightful, actionable intelligence that helps in predicting market trends and formulating strategic advice.
+This project is designed to draw insights by harnessing data on gas prices, crude oil prices, and the stock values of major oil and gas companies. The companies in focus include Chevron Corporation (CVX), Royal Dutch Shell (SHEL), ExxonMobil Corporation (XOM), and BP plc (BP). The project is structured into four distinct stages: data ingestion, transformation, storage, and analysis. Each stage plays a crucial role in turning raw data into insightful, actionable intelligence that helps in predicting market trends and formulating strategic advice.
 
 **Data Sources**
 
-The data for this project is retrieved from three main sources:
+The data for this project is retrieved from three main sources using the [Alphavantage API] (https://www.alphavantage.co/):
 1.	Gas Prices: Daily gas price data.
 2.	Crude Oil Prices: Daily crude oil price data.
 3.	Stock Values: Daily stock prices of CVX, SHEL, XOM, and BP.
