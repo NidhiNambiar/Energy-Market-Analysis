@@ -15,6 +15,9 @@ The data for this project is retrieved from three main sources:
 
 The data ingestion process is handled via Python scripts using standard libraries to make API calls. These scripts are deployed on Google Cloud using Cloud Functions, every 30 minutes using Cloud Scheduler, with data being temporarily stored in Cloud Storage buckets in JSON format before transformation.
 
+![cloud functions (1)](https://github.com/animeshnandan/inst767/assets/83339335/f29d7188-1939-4151-b431-55009a98aa5d)
+
+
 **Transformation**
 
 Data transformation is conducted using PySpark on Google Cloud's DataProc service, where we have employed cloud scheduler and dataproc workflows which trigger the creation of a compute engine which runs the jobs for all 4 stocks along with crude oil and natural gas. This stage aligns the data from their sources into a unified data model that supports our analytical objectives. Transformations are scheduled to run in accordance with the data ingest timings.
