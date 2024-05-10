@@ -1,54 +1,25 @@
-# INST 767 - Final Project
+#Project Overview
 
-## Summary about the Project
+This project is designed to develop predictive models and analytical resources by harnessing data on gas prices, crude oil prices, and the stock values of major oil and gas companies. The companies in focus include Chevron Corporation (CVX), Royal Dutch Shell (SHEL), ExxonMobil Corporation (XOM), and BP plc (BP). The project is structured into four distinct stages: data ingestion, transformation, storage, and analysis. Each stage plays a crucial role in turning raw data into insightful, actionable intelligence that helps in predicting market trends and formulating strategic advice.
 
-In this project, we've developed an all-inclusive data system resulting from the integration of four major data sources: CVX (Chevron Corporation), SHEL (Royal Dutch Shell), XOM (ExxonMobil Corporation), and BP (BP plc). This integration aims to explore the fluctuations and trends in crude oil and natural gas prices. The project is structured into four distinct stages: data ingestion, transformation, storage, and analysis. Each stage plays a crucial role in turning raw data into insightful, actionable intelligence that helps in predicting market trends and formulating strategic advice.
+##Data Sources
+The data for this project is retrieved from three main sources:
+1.	Gas Prices: Daily gas price data.
+2.	Crude Oil Prices: Daily crude oil price data.
+3.	Stock Values: Daily stock prices of CVX, SHEL, XOM, and BP.
+##System Architecture
 
-## Objective
+#Ingest
+The data ingestion process is handled via Python scripts using standard libraries to make API calls. These scripts are deployed on Google Cloud using Cloud Functions, every 30 minutes using Cloud Scheduler, with data being temporarily stored in Cloud Storage buckets in JSON format before transformation.
 
-The main objective is to harness current data on gas prices, crude oil prices, and the stock values of oil & gas companies to develop predictive models and analytical resources. We intend to build business questions to anticipate market trends and provide strategic guidance to address challenges in sectors such as oil & gas, transportation, manufacturing, and finance. The focus is on uncovering relationships between these data points and key economic indicators to assist in decision-making for cost control, investment planning, and operational enhancements. This objective leverages the data's ability to deliver practical insights that can significantly influence business strategies and financial management across various industries.
+#Transformation
+Data transformation is conducted using PySpark on Google Cloud's DataProc service, where we have employed cloud scheduler and dataproc workflows which trigger the creation of a compute engine which runs the jobs for all 4 stocks along with crude oil and natural gas. This stage aligns the data from their sources into a unified data model that supports our analytical objectives. Transformations are scheduled to run in accordance with the data ingest timings.
 
-## 📊 Data Ingestion
+#Storage
+The transformed data is stored in Google Cloud's BigQuery, which provides a robust platform for large-scale data analytics using SQL. We have created 2 separate datasets to store the data. ‘crudedataset’ contains tables storing the crude oil price and natural gas price. Whereas ‘stock_767’ stores the open, close, high, low & volume for the 4 stocks which we are dealing with. The schema has been defined for all the tables to ensure that the datatype is correct, so that queries run properly.
 
-In the ingestion stage, a Python function has been implemented within Google Cloud Functions. This function is designed to retrieve daily crude oil and gas prices data from the APIs of the four companies. The data is stored in separate Google Cloud Storage buckets, one for each company.
-
-### Key Technologies Used:
-- **google-cloud-storage**: Google Cloud client library for interacting with Google Cloud Storage.
-- **requests**: A popular Python HTTP library used for making HTTP requests to APIs.
-- **os**: Provides functions for interacting with the operating system, including environment variables.
-- **datetime**: For manipulating dates and times.
-- **flask**: A lightweight WSGI web application framework used in deploying Google Cloud Functions.
-
-### Process Breakdown:
-- Daily API calls to fetch data
-- Data validation and preliminary processing
-- Storage in designated cloud buckets
-
-## 🔧 Data Transformation
-
-In this stage, we have transformed the data into a unified data model, integrating data from the four different sources into a single model. The transformation of raw data into the data model was carried out using DataProc and PySpark, aimed at processing the data for efficient storage and subsequent analysis.
-
-### Process Breakdown:
-- Data cleaning and normalization
-- Schema alignment across different datasets
-- Integration into a unified data model
-
-## 🗄️ Data Storage
-
-We have established a database on Google Cloud to logically align with our data model. This setup ensures that our data is stored in a way that makes it easily and logically queryable.
-
-### Process Breakdown:
-- Database schema design
-- Data loading and indexing
-- Performance tuning and security settings
-
-## 📈 Data Analysis
-
-Our analysis is guided by business questions that are crucial for strategic decision-making. The analysis focuses on identifying patterns, trends, and correlations that could influence market behaviors and business decisions.
-
-### Process Breakdown:
-- Formulating and refining business questions
-- Applying statistical and machine learning models
-- Visualizing data trends and predictions
-- Generating reports and insights for decision support
-
+#Analysis
+While in-depth analysis is not the core focus of this project, the data model allows for basic queries that can answer specific questions related to the impact of oil prices on stock values and more. Example SQL queries are provided below to demonstrate this capability:
+a.	Is there a correlation between crude oil prices and the stock prices of these companies?
+b.	Determine if there are consistent patterns of volume preceding or following price changes.
+c.	Assess the liquidity of a stock by looking at the average volume. Higher volumes generally mean better liquidity, making it easier to execute trades without affecting the price too much.
