@@ -7,7 +7,8 @@ The data for this project is retrieved from three main sources:
 1.	Gas Prices: Daily gas price data.
 2.	Crude Oil Prices: Daily crude oil price data.
 3.	Stock Values: Daily stock prices of CVX, SHEL, XOM, and BP.
-##System Architecture
+
+**System Architecture**
 
 **Ingest**
 The data ingestion process is handled via Python scripts using standard libraries to make API calls. These scripts are deployed on Google Cloud using Cloud Functions, every 30 minutes using Cloud Scheduler, with data being temporarily stored in Cloud Storage buckets in JSON format before transformation.
