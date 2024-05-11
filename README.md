@@ -9,9 +9,33 @@ The data for this project is retrieved from three main sources using the [Alphav
 2.	Crude Oil Prices: Daily crude oil price data.
 3.	Stock Values: Daily stock prices of CVX, SHEL, XOM, and BP.
 
-## System Architecture
+## Data Pipeline Overview
 
 ![Untitled Jam 1](https://github.com/animeshnandan/inst767/assets/83339335/87f8bab2-6697-43ad-b748-e4f581f3cdd2)
+
+**Data Acquisition via APIs**
+
+The pipeline initiates by interfacing with external APIs that provide real-time data on stock, crude oil, and natural gas prices.
+
+**Data Fetching with Google Cloud Functions**
+
+The pipeline automates the fetching of market data at a regular interval of every 30 minutes using Cloud Functions and Cloud Scheduler.
+
+**Data Storage in Google Cloud Storage**
+
+Post-fetching, the data is stored in JSON format in Google Cloud Storage.
+
+**Data Processing with Cloud Dataproc and Cloud Scheduler**
+
+Scheduled data processing tasks are orchestrated by Cloud Scheduler, which triggers Cloud Dataproc jobs every 30 minutes. Dataproc, transforms the raw JSON data into a structured format suitable for Bigquery.
+
+**Data Storage and Analysis in BigQuery**
+
+The structured data is then loaded into BigQuery. In BigQuery, the data is organized into tables, facilitating efficient data queries.
+
+**Data Visualization with Looker Studio**
+
+Looker Studio is used to create visual representations of the analyzed data. Looker Studio can directly pull data from BigQuery to provide real-time access to insights, enhancing decision-making processes.
 
 ### Ingest
 
