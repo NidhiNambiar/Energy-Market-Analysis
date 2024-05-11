@@ -15,27 +15,27 @@ The data for this project is retrieved from three main sources using the [Alphav
 
 - **Data Acquisition via APIs**
 
-The pipeline initiates by interfacing with external APIs that provide real-time data on stock, crude oil, and natural gas prices.
+  The pipeline initiates by interfacing with external APIs that provide real-time data on stock, crude oil, and natural gas prices.
 
-**Data Fetching with Google Cloud Functions**
+- **Data Fetching with Google Cloud Functions**
 
-The pipeline automates the fetching of market data at a regular interval of every 30 minutes using Cloud Functions and Cloud Scheduler.
+  The pipeline automates the fetching of market data at a regular interval of every 30 minutes using Cloud Functions and Cloud Scheduler.
 
-**Data Storage in Google Cloud Storage**
+- **Data Storage in Google Cloud Storage**
 
-Post-fetching, the data is stored in JSON format in Google Cloud Storage.
+  Post-fetching, the data is stored in JSON format in Google Cloud Storage.
 
-**Data Processing with Cloud Dataproc and Cloud Scheduler**
+- **Data Processing with Cloud Dataproc and Cloud Scheduler**
 
-Scheduled data processing tasks are orchestrated by Cloud Scheduler, which triggers Cloud Dataproc jobs every 30 minutes. Dataproc, transforms the raw JSON data into a structured format suitable for Bigquery.
+  Scheduled data processing tasks are orchestrated by Cloud Scheduler, which triggers Cloud Dataproc jobs every 30 minutes. Dataproc, transforms the raw JSON data into a structured format suitable for Bigquery.
 
-**Data Storage and Analysis in BigQuery**
+- **Data Storage and Analysis in BigQuery**
 
-The structured data is then loaded into BigQuery. In BigQuery, the data is organized into tables, facilitating efficient data queries.
+  The structured data is then loaded into BigQuery. In BigQuery, the data is organized into tables, facilitating efficient data queries.
 
-**Data Visualization with Looker Studio**
+- **Data Visualization with Looker Studio**
 
-Looker Studio is used to create visual representations of the analyzed data. Looker Studio can directly pull data from BigQuery to provide real-time access to insights, enhancing decision-making processes.
+  Looker Studio is used to create visual representations of the analyzed data. Looker Studio can directly pull data from BigQuery to provide real-time access to insights, enhancing decision-making processes.
 
 ### Ingest
 
