@@ -41,7 +41,7 @@ The data for this project is retrieved from three main sources using the [Alphav
 
 ### Ingest
 
-The data ingestion process is handled via [Python scripts](https://github.com/animeshnandan/inst767/tree/main/cloudfunctions) using standard libraries to make API calls. These scripts are deployed on Google Cloud using Cloud Functions, every 30 minutes using Cloud Scheduler, with data being stored in Cloud Storage buckets in JSON format before transformation.
+The data ingestion process is handled via [Python scripts](https://github.com/animeshnandan/inst767/tree/main/cloudfunctions) using standard libraries to make API calls. These scripts are deployed on Google Cloud using Cloud Functions, every 30 minutes using Cloud Scheduler.
 
 ![cloud functions](https://github.com/animeshnandan/inst767/assets/83339335/3ae21dec-d1fb-4cb1-be36-0a04d30d5c63)
 |:--:|
@@ -55,17 +55,15 @@ The data ingestion process is handled via [Python scripts](https://github.com/an
 |:--:|
 | Running example of cloud function for 'shel'. |
 
+Once the cloud functions successfully execute, the data being stored in Cloud Storage buckets in JSON format before transformation.
+
 ![cloud storage buckets 1](https://github.com/animeshnandan/inst767/assets/83339335/a57ef3e2-daf7-4d61-b61a-7a8e8104bbb2)
 |:--:|
 | An overview of various Cloud Storage buckets |
 
 ![cloud storage buckets 2](https://github.com/animeshnandan/inst767/assets/83339335/da61c989-3070-4fb1-9fe4-4500058d2935)
 |:--:|
-| Google Cloud Storage bucket, 'stock767_xom', listing files within it |
-
-![cloud stoarge buckets 3](https://github.com/animeshnandan/inst767/assets/83339335/e300eacb-1a59-43b5-8de5-6625d34fd30f)
-|:--:|
-| Google Cloud Storage object details for a specific file |
+| Google Cloud Storage bucket, 'stock767_xom', listing JSON files within it. |
 
 ### Transformation
 
@@ -91,14 +89,6 @@ Data transformation is conducted using [PySpark code](https://github.com/animesh
 
 The transformed data is stored in Google Cloud's BigQuery, which is a robust platform for large-scale data analytics using SQL. We have created 2 separate datasets to store the data. ‘crudedataset’ contains tables storing the crude oil price and natural gas price. Whereas ‘stock_767’ stores the open, close, high, low & volume for the 4 stocks which we are dealing with. The schema has been defined for all the tables to ensure that the datatype is correct, so that queries run properly.
 
-![bigquery bp stock schema](https://github.com/animeshnandan/inst767/assets/83339335/4759b642-207e-481a-a05a-d71da1da9d5d)
-|:--:|
-| The schema for the 'bpstock' dataset in BigQuery. |
-
-![bigquery chevron stock schema](https://github.com/animeshnandan/inst767/assets/83339335/0568b831-fdc0-42ae-b81a-245cc7109b05)
-|:--:|
-| The schema for the 'chevronstock' dataset in BigQuery. |
-
 ![bigquery crude price preview](https://github.com/animeshnandan/inst767/assets/83339335/afbe469f-90cb-4c84-93f1-ffbf90ac0cbd)
 |:--:|
 | The 'crudeprice' dataset in BigQuery, showcasing rows of data with date and value fields. |
@@ -106,14 +96,6 @@ The transformed data is stored in Google Cloud's BigQuery, which is a robust pla
 ![bigquery exxon stock preview](https://github.com/animeshnandan/inst767/assets/83339335/2667767d-9fdd-4469-b79d-448691a8532f)
 |:--:|
 | The preview of the 'exxonstock' dataset in BigQuery with all the fields. |
-
-![bigquery natural gas preview](https://github.com/animeshnandan/inst767/assets/83339335/9d169fac-d827-4ab7-81f6-3e7ef362ce92)
-|:--:|
-| The preview of the 'natural_gas' dataset in BigQuery, showcasing rows of data with date and value fields. |
-
-![bigquery shell stock preview](https://github.com/animeshnandan/inst767/assets/83339335/06681947-716b-4eee-9047-9797266c38c2)
-|:--:|
-| The 'shellstock' dataset within BigQuery with all the fields. |
 
 ### Analysis
 
@@ -139,3 +121,7 @@ c.	Assess the liquidity of a stock by looking at the average volume. Higher volu
 
 **[Link to Download Looker Studio Visualization.pdf](https://github.com/animeshnandan/inst767/files/15281045/Link.to.Download.Looker.Studio.Visualization.pdf)**
 |:--:|
+
+### Management
+
+The project is managed through GitHub, with regular commits that reflect continuous integration and development. Each team member's contributions are clearly documented through meaningful small commits. Code is orgainized into respective folders for each stage ([Ingest](https://github.com/animeshnandan/inst767/tree/main/cloudfunctions), [Transformation](https://github.com/animeshnandan/inst767/tree/main/dataprocjobs), Storage, [Analysis](https://github.com/animeshnandan/inst767/tree/main/bigqueries))
