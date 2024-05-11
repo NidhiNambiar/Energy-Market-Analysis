@@ -41,43 +41,43 @@ The data for this project is retrieved from three main sources using the [Alphav
 
 The data ingestion process is handled via [Python scripts](https://github.com/animeshnandan/inst767/tree/main/cloudfunctions) using standard libraries to make API calls. These scripts are deployed on Google Cloud using Cloud Functions, every 30 minutes using Cloud Scheduler, with data being temporarily stored in Cloud Storage buckets in JSON format before transformation.
 
-![cloud functions (1)](https://github.com/animeshnandan/inst767/assets/83339335/f29d7188-1939-4151-b431-55009a98aa5d)
+![cloud functions](https://github.com/animeshnandan/inst767/assets/83339335/3ae21dec-d1fb-4cb1-be36-0a04d30d5c63)
 
-![cloud scheduler for cloud functions](https://github.com/animeshnandan/inst767/assets/83339335/31b3adbb-406a-455b-9201-09a22d37db06)
+![cloud scheduler for cloud functions](https://github.com/animeshnandan/inst767/assets/83339335/c7c080cc-bbdb-407a-af48-6ee9d503b216)
 
-![cloud storage buckets 1](https://github.com/animeshnandan/inst767/assets/83339335/96b6aecb-e100-4782-9972-79ac77daf836)
+![cloud storage buckets 1](https://github.com/animeshnandan/inst767/assets/83339335/a57ef3e2-daf7-4d61-b61a-7a8e8104bbb2)
 
-![cloud storage buckets 2](https://github.com/animeshnandan/inst767/assets/83339335/9636167e-cb4d-4dfb-8d2a-eb157c31f3fe)
+![cloud storage buckets 2](https://github.com/animeshnandan/inst767/assets/83339335/da61c989-3070-4fb1-9fe4-4500058d2935)
 
-![cloud stoarge buckets 3](https://github.com/animeshnandan/inst767/assets/83339335/5907945a-54e6-4971-85f9-f08158346861)
+![cloud stoarge buckets 3](https://github.com/animeshnandan/inst767/assets/83339335/e300eacb-1a59-43b5-8de5-6625d34fd30f)
 
 ### Transformation
 
 Data transformation is conducted using [PySpark code](https://github.com/animeshnandan/inst767/tree/main/dataprocjobs) on Google Cloud's DataProc service, where we have employed cloud scheduler and dataproc workflows which trigger the creation of a compute engine which runs the jobs for all 4 stocks along with crude oil and natural gas. This stage aligns the data from their sources into a unified data model that supports our analytical objectives. Transformations are scheduled to run in accordance with the data ingest timings.
 
-![cloud storage bucket storing pyspark files](https://github.com/animeshnandan/inst767/assets/83339335/f2013552-97d4-4056-9753-7b655ed4f6ea)
+![cloud storage bucket storing pyspark files](https://github.com/animeshnandan/inst767/assets/83339335/bef4c8d8-91c6-47e3-a41e-54df46f3f3f6)
 
-![cloud scheduler triggering dataproc workflow](https://github.com/animeshnandan/inst767/assets/83339335/c169a110-92ff-42c9-85c1-6575e70080da)
+![cloud scheduler triggering dataproc workflow](https://github.com/animeshnandan/inst767/assets/83339335/ea19305f-c068-4b4d-af47-0c163990a962)
 
-![dataproc compute engine](https://github.com/animeshnandan/inst767/assets/83339335/8590f488-33c8-4ae5-8f05-3016668191c1)
+![dataproc compute engine](https://github.com/animeshnandan/inst767/assets/83339335/6487efa8-b83b-4d5c-8763-e67c75681aed)
 
-![dataproc jobs](https://github.com/animeshnandan/inst767/assets/83339335/45c1ecf0-238f-4c95-969a-8162e5b00d7c)
+![dataproc jobs](https://github.com/animeshnandan/inst767/assets/83339335/9f0ae15a-ab03-49e3-9058-c26c6fd38e94)
 
 ### Storage
 
 The transformed data is stored in Google Cloud's BigQuery, which provides a robust platform for large-scale data analytics using SQL. We have created 2 separate datasets to store the data. ‘crudedataset’ contains tables storing the crude oil price and natural gas price. Whereas ‘stock_767’ stores the open, close, high, low & volume for the 4 stocks which we are dealing with. The schema has been defined for all the tables to ensure that the datatype is correct, so that queries run properly.
 
-![bigquery bp stock schema](https://github.com/animeshnandan/inst767/assets/83339335/13794035-07bb-455d-a274-fd77fff1d966)
+![bigquery bp stock schema](https://github.com/animeshnandan/inst767/assets/83339335/4759b642-207e-481a-a05a-d71da1da9d5d)
 
-![bigquery chevron stock schema](https://github.com/animeshnandan/inst767/assets/83339335/3b4fe36f-3d60-4c58-bf7b-e72352840318)
+![bigquery chevron stock schema](https://github.com/animeshnandan/inst767/assets/83339335/0568b831-fdc0-42ae-b81a-245cc7109b05)
 
-![bigquery crude price preview](https://github.com/animeshnandan/inst767/assets/83339335/49ac4bfd-6bd4-43ea-a2ae-d17f4ba0a786)
+![bigquery crude price preview](https://github.com/animeshnandan/inst767/assets/83339335/afbe469f-90cb-4c84-93f1-ffbf90ac0cbd)
 
-![bigquery exxon stock preview](https://github.com/animeshnandan/inst767/assets/83339335/e25c7976-3f0d-4b19-ade3-4b0001bdb046)
+![bigquery exxon stock preview](https://github.com/animeshnandan/inst767/assets/83339335/2667767d-9fdd-4469-b79d-448691a8532f)
 
-![bigquery natural gas preview](https://github.com/animeshnandan/inst767/assets/83339335/5c6bcfeb-419f-49bc-8f35-87d702fac68a)
+![bigquery natural gas preview](https://github.com/animeshnandan/inst767/assets/83339335/9d169fac-d827-4ab7-81f6-3e7ef362ce92)
 
-![bigquery shell stock preview](https://github.com/animeshnandan/inst767/assets/83339335/962e3cfb-3052-441c-8a42-c26759320122)
+![bigquery shell stock preview](https://github.com/animeshnandan/inst767/assets/83339335/06681947-716b-4eee-9047-9797266c38c2)
 
 ### Analysis
 
@@ -85,12 +85,12 @@ While in-depth analysis is not the core focus of this project, the data model al
 
 a.	Is there a correlation between crude oil prices and the stock prices of these companies?
 
-![bigquery correlation](https://github.com/animeshnandan/inst767/assets/83339335/3e07a29c-5606-4be1-a9c3-5eb22876c953)
+![bigquery correlation](https://github.com/animeshnandan/inst767/assets/83339335/d7912f04-0f29-49fc-baec-f406d048951b)
 
 b.	Determine if there are consistent patterns of volume preceding or following price changes.
 
-![consistent patterns of volume](https://github.com/animeshnandan/inst767/assets/83339335/0fde6653-a1d9-435c-a8ed-5154846f022d)
+![consistent patterns of volume](https://github.com/animeshnandan/inst767/assets/83339335/302a7cd4-bceb-4366-8b42-7b9f3e64b42a)
 
 c.	Assess the liquidity of a stock by looking at the average volume. Higher volumes generally mean better liquidity, making it easier to execute trades without affecting the price too much.
 
-![assessing the liquidity](https://github.com/animeshnandan/inst767/assets/83339335/56759692-6530-46d5-bb24-a72d21cbca26)
+![assessing the liquidity](https://github.com/animeshnandan/inst767/assets/83339335/9e1b19a8-52f6-41fb-b05c-f749237fb82f)
