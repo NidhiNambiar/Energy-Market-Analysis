@@ -13,9 +13,7 @@ The data for this project is retrieved from three main sources using the [Alphav
 
 ![Untitled Jam 1](https://github.com/animeshnandan/inst767/assets/83339335/87f8bab2-6697-43ad-b748-e4f581f3cdd2)
 
-**Data Acquisition via APIs**
-
-The pipeline initiates by interfacing with external APIs that provide real-time data on stock, crude oil, and natural gas prices.
+**Data Acquisition via APIs** The pipeline initiates by interfacing with external APIs that provide real-time data on stock, crude oil, and natural gas prices.
 
 **Data Fetching with Google Cloud Functions**
 
