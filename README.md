@@ -94,3 +94,6 @@ b.	Determine if there are consistent patterns of volume preceding or following p
 c.	Assess the liquidity of a stock by looking at the average volume. Higher volumes generally mean better liquidity, making it easier to execute trades without affecting the price too much.
 
 ![assessing the liquidity](https://github.com/animeshnandan/inst767/assets/83339335/9e1b19a8-52f6-41fb-b05c-f749237fb82f)
+
+**[Link to Looker Studio Visualization]([INST767_Final_Project_Report (3).pdf](https://github.com/animeshnandan/inst767/files/15281038/INST767_Final_Project_Report.3.pdf)**
+
