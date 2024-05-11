@@ -95,5 +95,5 @@ c.	Assess the liquidity of a stock by looking at the average volume. Higher volu
 
 ![assessing the liquidity](https://github.com/animeshnandan/inst767/assets/83339335/9e1b19a8-52f6-41fb-b05c-f749237fb82f)
 
-**[Link to Looker Studio Visualization]([INST767_Final_Project_Report (3).pdf](https://github.com/animeshnandan/inst767/files/15281038/INST767_Final_Project_Report.3.pdf)**
+**[Link to Download Looker Studio Visualization.pdf](https://github.com/animeshnandan/inst767/files/15281045/Link.to.Download.Looker.Studio.Visualization.pdf)**
 
