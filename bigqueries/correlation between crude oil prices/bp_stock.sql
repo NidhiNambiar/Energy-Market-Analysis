@@ -4,3 +4,4 @@ SELECT
   FROM
     `learned-vault-378620.crudedataset.crudeprice` AS t1
     INNER JOIN `learned-vault-378620.stocks_767.bpstock` AS t2 ON t1.date = t2.date
+ 
