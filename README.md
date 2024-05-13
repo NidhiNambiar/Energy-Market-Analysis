@@ -105,9 +105,9 @@ a.	Is there a correlation between crude oil prices and natural gas, as well as t
 
 ![bigquery correlation](https://github.com/animeshnandan/inst767/assets/83339335/d7912f04-0f29-49fc-baec-f406d048951b)
 |:--:|
-| A query and its results in BigQuery, analyzing the correlation between crude oil prices and Exxon stock prices. The results indicate significant correlations, reflected by correlation coefficients. |
+| A query and its results in BigQuery, analyzing the correlation between crude oil prices and Exxon stock prices. The results indicate significant correlations (p < 0.05), as reflected by correlation coefficients. |
 
-b.	Determine if there are consistent patterns of volume preceding or following price changes.
+b.	Are there consistent patterns in trading volume preceding or following price changes?
 
 ![consistent patterns of volume](https://github.com/animeshnandan/inst767/assets/83339335/302a7cd4-bceb-4366-8b42-7b9f3e64b42a)
 |:--:|
