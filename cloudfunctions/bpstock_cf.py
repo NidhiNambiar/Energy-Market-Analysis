@@ -24,3 +24,4 @@ def fetch_and_store_stock_data(request):
     blob = bucket.blob(filename)
     blob.upload_from_string(data, content_type='application/json')
     return f"File {filename} uploaded to {bucket.name}."
+    
