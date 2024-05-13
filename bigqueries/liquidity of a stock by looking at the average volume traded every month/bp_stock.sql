@@ -11,3 +11,5 @@ GROUP BY
     Year, Month
 ORDER BY
     Year, Month;
+
+ 
