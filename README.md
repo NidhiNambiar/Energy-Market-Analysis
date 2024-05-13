@@ -99,7 +99,7 @@ The transformed data is stored in Google Cloud's BigQuery, which is a robust pla
 
 ### Analysis
 
-While in-depth analysis is not the core focus of this project, the data model allows for basic [queries](https://github.com/animeshnandan/inst767/tree/main/bigqueries) that can answer specific questions related to the impact of oil prices on stock values and more. Example SQL queries are provided below to demonstrate this capability:
+While carrying out a comprehensive analysis is beyond the scope of this project, the data model supports basic [queries](https://github.com/animeshnandan/inst767/tree/main/bigqueries) to address specific questions, such as the impact of oil prices on stock values, among others. Below, example SQL queries are provided to illustrate this functionality:
 
 a.	Is there a correlation between crude oil prices and natural gas, stock prices of the companies?
 
