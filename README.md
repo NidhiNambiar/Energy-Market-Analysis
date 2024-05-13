@@ -101,7 +101,7 @@ The transformed data is stored in Google Cloud's BigQuery, which is a robust pla
 
 While carrying out a comprehensive analysis is beyond the scope of this project, the data model supports basic [queries](https://github.com/animeshnandan/inst767/tree/main/bigqueries) to address specific questions, such as the impact of oil prices on stock values, among others. Below, example SQL queries are provided to illustrate this functionality:
 
-a.	Is there a correlation between crude oil prices and natural gas, stock prices of the companies?
+a.	Is there a correlation between crude oil prices and natural gas, as well as the stock prices of the four major companies: CVX, SHEL, XOM, and BP?
 
 ![bigquery correlation](https://github.com/animeshnandan/inst767/assets/83339335/d7912f04-0f29-49fc-baec-f406d048951b)
 |:--:|
