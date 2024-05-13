@@ -12,7 +12,7 @@ def fetch_and_store_stock_data(request):
 
     # Initialize Cloud Storage client
     storage_client = storage.Client()
-    bucket = storage_client.bucket('stock767_bp')
+    bucket = storage_client.bucket('stock767_bp')                                   
 
     # Function to fetch stock market data
     api_url = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=BP&apikey=311DM75JHN4UE6UD"
