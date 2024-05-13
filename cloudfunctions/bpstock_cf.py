@@ -1,9 +1,9 @@
 #BP
 
-from google.cloud import storage
-import requests
-import os
-from datetime import datetime
+from google.cloud import storage 
+import requests 
+import os 
+from datetime import datetime 
 from flask import escape
 
 def fetch_and_store_stock_data(request):
