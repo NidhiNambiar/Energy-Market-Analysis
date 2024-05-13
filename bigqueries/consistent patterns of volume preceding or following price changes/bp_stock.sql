@@ -7,3 +7,8 @@ SELECT
   FROM
     `learned-vault-378620.stocks_767.bpstock` AS t1
     INNER JOIN `learned-vault-378620.stocks_767.bpstock` AS t2 ON t1.Date = t2.Date - 1
+
+SELECT 
+     t1.Date,
+     t1.Volume, 
+     t2.Close - t1.Close As price_change
