@@ -1,6 +1,6 @@
 # Project Overview
 
-This project is designed to draw insights by harnessing data on gas prices, crude oil prices, and the stock values of major oil and gas companies. The companies in focus include Chevron Corporation (CVX), Royal Dutch Shell (SHEL), ExxonMobil Corporation (XOM), and BP plc (BP). The project is structured into four distinct stages: data ingestion, transformation, storage, and analysis. Each stage plays a crucial role in turning raw data into insightful, actionable intelligence that helps in predicting market trends and formulating strategic advice.
+This project is designed to analyze insights from datasets containing gas prices, crude oil prices, and the stock values of major oil and gas companies. The companies in focus are Chevron Corporation (CVX), Royal Dutch Shell (SHEL), ExxonMobil Corporation (XOM), and BP plc (BP). The project is delineated into four distinct stages: data ingestion, transformation, storage, and analysis. Each of these stages plays a significant role in transforming raw data into insightful, actionable intelligence that helps predict market trends and formulate strategic advice.
 
 ## Data Sources
 
@@ -29,7 +29,7 @@ The data for this project is retrieved from three main sources using the [Alphav
 
 - **Data Processing with Cloud Dataproc and Cloud Scheduler**
 
-  Scheduled data processing tasks are orchestrated by Cloud Scheduler, which triggers Cloud Dataproc jobs every 30 minutes. Dataproc, transforms the raw JSON data into a structured format suitable for Bigquery.
+Scheduled data processing tasks are orchestrated by Cloud Scheduler, which triggers Cloud Dataproc jobs every 30 minutes. Dataproc, transforms the raw JSON data into a structured format suitable for Bigquery.
 
 - **Data Storage and Analysis in BigQuery**
 
@@ -37,7 +37,7 @@ The data for this project is retrieved from three main sources using the [Alphav
 
 - **Data Visualization with Looker Studio**
 
-  Looker Studio is used to create visual representations of the analyzed data. Looker Studio can directly pull data from BigQuery to provide real-time access to insights, enhancing decision-making processes.
+Looker Studio is used to create visual representations of the analyzed data. Looker Studio can directly pull data from BigQuery to provide real-time access to insights, enhancing decision-making processes.
 
 ### Ingest
 
