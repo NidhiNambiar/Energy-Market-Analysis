@@ -111,7 +111,7 @@ b.	Are there consistent patterns in trading volume preceding or following price 
 
 ![consistent patterns of volume](https://github.com/animeshnandan/inst767/assets/83339335/302a7cd4-bceb-4366-8b42-7b9f3e64b42a)
 |:--:|
-| A query analyzing if there are consistent patterns of trading volume before significant price changes in Exxon stock. The query results show the dates, volumes, and corresponding price changes, providing insights into the trading behavior preceding price adjustments. |
+| A query analyzing if there are consistent patterns of trading volume before significant price changes in Exxon stock. The results reveal that substantial trading volumes often procede significant price movements. For example, on Feb 27, 2024, a volume of 16.4 million corresponded to a price change of 0.29, and on Dec 19, 2023, a volume of 18.9 millions corresponded to a pirce change of -0.89. Other notable dates include Jan 18, 2024 with a volume of 20.9 million and a price change of 0.86, and Mar 29, 2024, wit a volume of 20.9 million and a price change of -0.86. These results suggest that the analysis of trading volumes can provide valuable insights into price movements, helping to inform trading strategies of such mega companies. |
 
 c. How does the average volume of a stock influence its liquidity, and how can analyzing average trading volume over various months demonstrate the stock's liquidity and impact trade execution?
 
