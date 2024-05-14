@@ -113,7 +113,7 @@ b.	Are there consistent patterns in trading volume preceding or following price 
 |:--:|
 | A query analyzing if there are consistent patterns of trading volume before significant price changes in Exxon stock. The query results show the dates, volumes, and corresponding price changes, providing insights into the trading behavior preceding price adjustments. |
 
-c.	Assess the liquidity of a stock by looking at the average volume. Higher volumes generally mean better liquidity, making it easier to execute trades without affecting the price too much.
+c.How does the average volume of a stock influence its liquidity, and how can analyzing average trading volume over various months demonstrate the stock's liquidity and impact trade execution?
 
 ![assessing the liquidity](https://github.com/animeshnandan/inst767/assets/83339335/9e1b19a8-52f6-41fb-b05c-f749237fb82f)
 |:--:|
