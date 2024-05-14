@@ -122,8 +122,6 @@ c.	Assess the liquidity of a stock by looking at the average volume. Higher volu
 **[Looker Studio Visualization](https://lookerstudio.google.com/reporting/80dbad03-eff7-45f0-8eff-f19dea39fabd)**
 |:--:|
 
-<a href="https://lookerstudio.google.com/reporting/80dbad03-eff7-45f0-8eff-f19dea39fabd" target="_blank">Looker Studio Visualization</a>
-
 ### Management
 
 The project is managed through GitHub, with regular commits that reflect continuous integration and development. Each team member's contributions are clearly documented through meaningful small commits. Code is orgainized into respective folders for each stage ([Ingest](https://github.com/animeshnandan/inst767/tree/main/cloudfunctions), [Transformation](https://github.com/animeshnandan/inst767/tree/main/dataprocjobs), Storage, [Analysis](https://github.com/animeshnandan/inst767/tree/main/bigqueries))
