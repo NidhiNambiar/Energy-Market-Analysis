@@ -105,7 +105,7 @@ a.	Is there a correlation between crude oil prices and natural gas, as well as t
 
 ![bigquery correlation](https://github.com/animeshnandan/inst767/assets/83339335/d7912f04-0f29-49fc-baec-f406d048951b)
 |:--:|
-| A query and its results in BigQuery, analyzing the correlation between crude oil prices and Exxon stock prices. The results indicate significant correlations (p < 0.05), as reflected by correlation coefficients. |
+| A query and its results in BigQuery, analyzing the correlation between crude oil prices and Exxon stock prices. The results indicate a strong positive correlation (f0_) of approximately 0.9063. This suggests a substantial relationship between crude oil prices and Exxon stock prices. |
 
 b.	Are there consistent patterns in trading volume preceding or following price changes?
 
