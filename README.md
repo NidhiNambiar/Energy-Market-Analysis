@@ -119,10 +119,10 @@ c.	Assess the liquidity of a stock by looking at the average volume. Higher volu
 |:--:|
 | A query to assess stock liquidity by analyzing the average trading volume for 'bpstock' over various months. The results demonstrate the average volume traded, which helps assess the liquidity of these stocks. |
 
-**[Looker Studio Visualization](https://github.com/animeshnandan/inst767/files/15281045/Link.to.Download.Looker.Studio.Visualization.pdf)**
+**[Looker Studio Visualization](https://lookerstudio.google.com/reporting/80dbad03-eff7-45f0-8eff-f19dea39fabd)**
 |:--:|
 
-<a href="https://github.com/animeshnandan/inst767/files/15281045/Link.to.Download.Looker.Studio.Visualization.pdf" target="_blank">Looker Studio Visualization</a>
+<a href="https://lookerstudio.google.com/reporting/80dbad03-eff7-45f0-8eff-f19dea39fabd" target="_blank">Looker Studio Visualization</a>
 
 ### Management
 
