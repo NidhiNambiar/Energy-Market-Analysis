@@ -39,7 +39,7 @@ Scheduled data processing tasks are orchestrated by Cloud Scheduler, which trigg
 
 Looker Studio is used to create visual representations of the analyzed data. Looker Studio can directly pull data from BigQuery to provide real-time access to insights, enhancing decision-making processes.
 
-### Ingest
+## Ingestion
 
 The data ingestion process is handled via [Python scripts](https://github.com/animeshnandan/inst767/tree/main/cloudfunctions) using standard libraries to make API calls. These scripts are deployed on Google Cloud using Cloud Functions, every 30 minutes using Cloud Scheduler.
 
@@ -65,7 +65,7 @@ Once the cloud functions successfully execute, the data being stored in Cloud St
 |:--:|
 | Google Cloud Storage bucket, 'stock767_xom', listing JSON files within it. |
 
-### Transformation
+## Transformation
 
 Data transformation is conducted using [PySpark code](https://github.com/animeshnandan/inst767/tree/main/dataprocjobs) on DataProc, where we have employed cloud scheduler and dataproc workflows which trigger the creation of a compute engine which runs the jobs for all 4 stocks along with crude oil and natural gas. This stage aligns the data from their source JSON files into a data model in Bigquery that supports our analytical objectives to answer a couple of business questions. Transformations are scheduled to run in accordance with the data ingest timings every 30 minutes.
 
@@ -85,7 +85,7 @@ Data transformation is conducted using [PySpark code](https://github.com/animesh
 |:--:|
 | DataProc Jobs interface, showing a list of completed PySpark jobs by cluster. |
 
-### Storage
+## Storage
 
 The transformed data is stored in Google Cloud's BigQuery, which is a robust platform for large-scale data analytics using SQL. We have created 2 separate datasets to store the data. ‘crudedataset’ contains tables storing the crude oil price and natural gas price. Whereas ‘stock_767’ stores the open, close, high, low & volume for the 4 stocks which we are dealing with. The schema has been defined for all the tables to ensure that the datatype is correct, so that queries run properly.
 
@@ -97,31 +97,52 @@ The transformed data is stored in Google Cloud's BigQuery, which is a robust pla
 |:--:|
 | The preview of the 'exxonstock' dataset in BigQuery with all the fields. |
 
-### Analysis
+## Analysis
 
 While carrying out a comprehensive analysis is beyond the scope of this project, the data model supports basic [queries](https://github.com/animeshnandan/inst767/tree/main/bigqueries) to address specific questions, such as the impact of oil prices on stock values, among others. Below, example SQL queries are provided to illustrate this functionality:
 
-a.	Is there a correlation between crude oil prices and natural gas, as well as the stock prices of the four major companies: CVX, SHEL, XOM, and BP?
+A.  Is there a correlation between crude oil prices and natural gas, as well as the stock prices of the four major companies: CVX, SHEL, XOM, and BP?
 
 ![bigquery correlation](https://github.com/animeshnandan/inst767/assets/83339335/d7912f04-0f29-49fc-baec-f406d048951b)
 |:--:|
-| A query and its results in BigQuery, analyzing the correlation between crude oil prices and Exxon stock prices. The results indicate a strong positive correlation (f0_) of approximately 0.9063. This suggests a substantial relationship between crude oil prices and Exxon stock prices. |
+| A query and its results in BigQuery, analyzing the correlation between crude oil prices and Exxon stock prices. The results indicate significant correlations, reflected by correlation coefficients. |
 
-b.	Are there consistent patterns in trading volume preceding or following price changes?
+- **Inference**
+
+1.  Strong Relationship: The high correlation (value = 0.906) suggests that the prices of crude oil and natural gas move together in a similar direction. When one goes up, the other is likely to go up too.
+
+2.  Market Dynamics: This strong correlation can be attributed to the interconnectedness of energy markets. Both crude oil and natural gas are key energy commodities, and their prices are often influenced by similar factors such as global economic conditions, geopolitical events, and changes in supply and demand.
+
+3.  Predictive Analysis: Given the strong correlation, the price of one commodity can be a good predictor of the price movement of the other. For instance, if you see an increase in crude oil prices, it is likely that natural gas prices will follow a similar trend.
+
+4.  Investment Decisions: For investors, this information is valuable for making informed decisions. Understanding that the two commodities have a strong positive correlation can help in diversifying investments and managing risks.
+
+B.  Are there consistent patterns in trading volume preceding or following price changes?
 
 ![consistent patterns of volume](https://github.com/animeshnandan/inst767/assets/83339335/302a7cd4-bceb-4366-8b42-7b9f3e64b42a)
 |:--:|
-| A query analyzing if there are consistent patterns of trading volume before significant price changes in Exxon stock. The results reveal that substantial trading volumes often procede significant price movements. For example, on Feb 27, 2024, a volume of 16.4 million corresponded to a price change of 0.29, and on Dec 19, 2023, a volume of 18.9 millions corresponded to a pirce change of -0.89. Other notable dates include Jan 18, 2024 with a volume of 20.9 million and a price change of 0.86, and Mar 29, 2024, wit a volume of 20.9 million and a price change of -0.86. These results suggest that the analysis of trading volumes can provide valuable insights into price movements, helping to inform trading strategies of such mega companies. |
+| A query analyzing if there are consistent patterns of trading volume before significant price changes in Exxon stock. The query results show the dates, volumes, and corresponding price changes, providing insights into the trading behavior preceding price adjustments. |
 
-c. How does the average volume of a stock influence its liquidity, and how can analyzing average trading volume over various months demonstrate the stock's liquidity and impact trade execution?
+- **Inference**
+
+1.  Patterns in Volume: To determine consistent patterns, you need to analyze if changes in volume precede significant changes in price or if significant price changes are followed by changes in volume.
+
+2.  Additional Analysis Needed: The result provides the necessary data, but further analysis (e.g., statistical tests or visualizations) is required to identify and confirm consistent patterns.
+
+C.  How does the average volume of a stock influence its liquidity, and how can analyzing average trading volume over various months demonstrate the stock's liquidity and impact trade execution?
 
 ![assessing the liquidity](https://github.com/animeshnandan/inst767/assets/83339335/9e1b19a8-52f6-41fb-b05c-f749237fb82f)
 |:--:|
-| A query to assess stock liquidity analzyed the average trading volume for 'bpstock' over various months. The results indicate fluctuating liquidity. Higher volumes in January, February, and April 2024 (9.1 million, 10 million, and 11.8 million, respectively) suggest better liquidity, facilitating easier trades without significantly impacting the stock price. Conversely, lower prices in December 2023, and March 2024 (6.9 million each) indicate reduced liquidity, potentially making trades more difficult and fragile to price changes.|
+| A query to assess stock liquidity by analyzing the average trading volume for 'bpstock' over various months. The results demonstrate the average volume traded, which helps assess the liquidity of these stocks. |
 
-**[Looker Studio Visualization](https://lookerstudio.google.com/reporting/80dbad03-eff7-45f0-8eff-f19dea39fabd)**
-|:--:|
+- **Inference**
 
-### Management
+1.  Average Volume: The result displays the average trading volume, which provides a measure of how actively the stock is traded.
+
+2.  Liquidity Assessment: By examining this average volume, one can infer the stock's liquidity. Higher average volumes indicate that the stock is more liquid, facilitating easier and more efficient trading.
+
+## [Looker Studio Visualization](https://lookerstudio.google.com/reporting/80dbad03-eff7-45f0-8eff-f19dea39fabd)
+
+## Management
 
 The project is managed through GitHub, with regular commits that reflect continuous integration and development. Each team member's contributions are clearly documented through meaningful small commits. Code is orgainized into respective folders for each stage ([Ingest](https://github.com/animeshnandan/inst767/tree/main/cloudfunctions), [Transformation](https://github.com/animeshnandan/inst767/tree/main/dataprocjobs), Storage, [Analysis](https://github.com/animeshnandan/inst767/tree/main/bigqueries))
