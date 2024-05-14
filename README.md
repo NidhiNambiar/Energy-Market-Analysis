@@ -113,11 +113,11 @@ b.	Are there consistent patterns in trading volume preceding or following price 
 |:--:|
 | A query analyzing if there are consistent patterns of trading volume before significant price changes in Exxon stock. The query results show the dates, volumes, and corresponding price changes, providing insights into the trading behavior preceding price adjustments. |
 
-c.How does the average volume of a stock influence its liquidity, and how can analyzing average trading volume over various months demonstrate the stock's liquidity and impact trade execution?
+c. How does the average volume of a stock influence its liquidity, and how can analyzing average trading volume over various months demonstrate the stock's liquidity and impact trade execution?
 
 ![assessing the liquidity](https://github.com/animeshnandan/inst767/assets/83339335/9e1b19a8-52f6-41fb-b05c-f749237fb82f)
 |:--:|
-| A query to assess stock liquidity by analyzing the average trading volume for 'bpstock' over various months. The results demonstrate the average volume traded, which helps assess the liquidity of these stocks. |
+| A query to assess stock liquidity analzyed the average trading volume for 'bpstock' over various months. The results indicate fluctuating liquidity. Higher volumes in January, February, and April 2024 (9.1 million, 10 million, and 11.8 million, respectively) suggest better liquidity, facilitating easier trades without significantly impacting the stock price. Conversely, lower prices in December 2023, and March 2024 (6.9 million each) indicate reduced liquidity, potentially making trades more difficult and fragile to price changes.|
 
 **[Looker Studio Visualization](https://lookerstudio.google.com/reporting/80dbad03-eff7-45f0-8eff-f19dea39fabd)**
 |:--:|
