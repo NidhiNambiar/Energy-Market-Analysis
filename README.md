@@ -1,4 +1,8 @@
-# Project Overview
+# INST767 Big Data Infrastructure Final Project: Crude Oil, Natural Gas prices and Fuel Companies stock GCP Pipeline
+
+## Group 4: Animesh Nandan, Adhira RanjithKumar, Atharva Panvalkar, Nidhi Anil Nambiar, Mohamed Salama
+
+## Project Overview
 
 This project is designed to analyze insights from datasets containing gas prices, crude oil prices, and the stock values of major oil and gas companies. The companies in focus are Chevron Corporation (CVX), Royal Dutch Shell (SHEL), ExxonMobil Corporation (XOM), and BP plc (BP). The project is delineated into four distinct stages: data ingestion, transformation, storage, and analysis. Each of these stages plays a significant role in transforming raw data into insightful, actionable intelligence that helps predict market trends and formulate strategic advice.
 
